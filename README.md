@@ -1,3 +1,6 @@
+## Physical mem template for Windows Kernel Exploits by Juan Sacco
+<<jsacco@exploitpack.com>> https://exploitpack.com
+
 In this exploit, the core technique here was hijacking a legitimate syscall (NtShutdownSystem) to act as a gate into arbitrary kernel exports.
 
 First, resolved the virtual address of a target kernel routine (PsGetCurrentProcess, DbgPrint, ExAllocatePoolWithTag, etc) by parsing the ntoskrnl export table.
@@ -51,3 +54,5 @@ As we located the dispatcher we can easily find the next IOCTL code we need: ZwU
 Now we are ready to launch our exploit with the device name and the ioctl codes for ZwMapViewOfSection and ZwUnMapViewOfSection. As a result we have obtained Arbitrary Kernel Code Execution, process tokens have been swapped from System 4 to the current process, effectively escalating the current user to System.
 
 <img src="https://cdn.shopify.com/s/files/1/0918/4162/6445/files/Screenshot_from_2025-09-18_19-35-29.png?v=1758702199">
+
+Credits: https://blog.back.engineering/
