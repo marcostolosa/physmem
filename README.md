@@ -1,5 +1,5 @@
 ## Physical mem template for Windows Kernel Exploits by Juan Sacco
-<<jsacco@exploitpack.com>> https://exploitpack.com
+<<support@exploitpack.com>> https://exploitpack.com
 
 In this exploit, the core technique here was hijacking a legitimate syscall (NtShutdownSystem) to act as a gate into arbitrary kernel exports.
 
